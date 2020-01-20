@@ -1,0 +1,4 @@
+2020.01.20:
+* new: library at release 3.3.3 commit #5fe69dd018745a88eecf1f7db40daf12d26f7ed0 (2018.09.04) from https://github.com/libarchive/libarchive/releases
+* new: readme file
+* new: changelog file
