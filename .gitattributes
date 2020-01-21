@@ -1008,7 +1008,6 @@ libarchive_fe/line_reader.c -text
 libarchive_fe/line_reader.h -text
 libarchive_fe/passphrase.c -text
 libarchive_fe/passphrase.h -text
-/license.txt -text
 tar/CMakeLists.txt -text
 tar/bsdtar.1 -text
 tar/bsdtar.c -text

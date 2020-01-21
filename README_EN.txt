@@ -50,13 +50,12 @@ The original library patched to add these files:
 
   * changelog file
   * readme file
-  * license from the repository as a source file (WTF?)
 
 -------------------------------------------------------------------------------
 2. LICENSE
 -------------------------------------------------------------------------------
 The libarchive distribution as a whole is Copyright by Tim Kientzle.
-(see included text file "license.txt" or
+(see included text file "COPYING" or
 `View License` section on the end server hub )
 
 -------------------------------------------------------------------------------
