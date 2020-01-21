@@ -1,6 +1,6 @@
 * README_EN.txt
 * 2020.01.21
-* libarchive
+* tacklelib--3dparty--libarchive
 
 1. DESCRIPTION
 2. LICENSE
@@ -56,7 +56,7 @@ The original library patched to add these files:
 -------------------------------------------------------------------------------
 The libarchive distribution as a whole is Copyright by Tim Kientzle.
 (see included text file "COPYING" or
-`View License` section on the end server hub )
+`View License` section on the site https://github.com/libarchive/libarchive )
 
 -------------------------------------------------------------------------------
 3. REPOSITORIES
