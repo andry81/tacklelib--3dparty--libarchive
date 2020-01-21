@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2020.01.20
+* 2020.01.21
 * libarchive
 
 1. DESCRIPTION
@@ -14,7 +14,7 @@
 libarchive patched sources fork from:
 https://github.com/libarchive/libarchive
 
-Based on version 3.3.3.
+Based on version 3.4.1.
 
 From authors:
 

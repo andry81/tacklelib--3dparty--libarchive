@@ -564,10 +564,8 @@ archive_write_zip_header(struct archive_write *a, struct archive_entry *entry)
 	zip->entry_uses_zip64 = 0;
 	zip->entry_crc32 = zip->crc32func(0, NULL, 0);
 	zip->entry_encryption = 0;
-	if (zip->entry != NULL) {
-		archive_entry_free(zip->entry);
-		zip->entry = NULL;
-	}
+	archive_entry_free(zip->entry);
+	zip->entry = NULL;
 
 	if (zip->cctx_valid)
 		archive_encrypto_aes_ctr_release(&zip->cctx);
@@ -1404,18 +1402,17 @@ path_length(struct archive_entry *entry)
 {
 	mode_t type;
 	const char *path;
+	size_t len;
 
 	type = archive_entry_filetype(entry);
 	path = archive_entry_pathname(entry);
 
 	if (path == NULL)
 		return (0);
-	if (type == AE_IFDIR &&
-	    (path[0] == '\0' || path[strlen(path) - 1] != '/')) {
-		return strlen(path) + 1;
-	} else {
-		return strlen(path);
-	}
+	len = strlen(path);
+	if (type == AE_IFDIR && (path[0] == '\0' || path[len - 1] != '/'))
+		++len; /* Space for the trailing / */
+	return len;
 }
 
 static int
@@ -1429,6 +1426,9 @@ write_path(struct archive_entry *entry, struct archive_write *archive)
 	path = archive_entry_pathname(entry);
 	type = archive_entry_filetype(entry);
 	written_bytes = 0;
+
+	if (path == NULL)
+		return (ARCHIVE_FATAL);
 
 	ret = __archive_write_output(archive, path, strlen(path));
 	if (ret != ARCHIVE_OK)
@@ -1460,10 +1460,8 @@ copy_path(struct archive_entry *entry, unsigned char *p)
 	memcpy(p, path, pathlen);
 
 	/* Folders are recognized by a trailing slash. */
-	if ((type == AE_IFDIR) & (path[pathlen - 1] != '/')) {
+	if ((type == AE_IFDIR) && (path[pathlen - 1] != '/'))
 		p[pathlen] = '/';
-		p[pathlen + 1] = '\0';
-	}
 }
 
 
