@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2020.01.21
+* 2020.01.24
 * tacklelib--3dparty--libarchive
 
 1. DESCRIPTION
@@ -13,8 +13,6 @@
 -------------------------------------------------------------------------------
 libarchive patched sources fork from:
 https://github.com/libarchive/libarchive
-
-Based on version 3.4.1.
 
 From authors:
 
