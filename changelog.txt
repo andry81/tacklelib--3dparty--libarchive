@@ -1,3 +1,6 @@
+2020.01.30:
+* changed: changelog updated for more accurate links
+
 2020.01.24:
 * changed: cutted off the version reference from the readme file as may change frequently
 
@@ -8,10 +11,10 @@
 * changed: readme file
 
 2020.01.21:
-* changed: library at release 3.4.1 commit #cce09646b566c61c2debff58a70da780b8457883 (2019.12.30) from https://github.com/libarchive/libarchive/releases
+* changed: library changes at release 3.4.1 commit #cce09646b566c61c2debff58a70da780b8457883 (2019.12.30) from https://github.com/libarchive/libarchive/releases/tag/v3.4.1 (https://github.com/libarchive/libarchive/commit/cce09646b566c61c2debff58a70da780b8457883 )
 * changed: readme file
 
 2020.01.20:
-* new: library at release 3.3.3 commit #5fe69dd018745a88eecf1f7db40daf12d26f7ed0 (2018.09.04) from https://github.com/libarchive/libarchive/releases
+* new: library changes at release 3.3.3 commit #5fe69dd018745a88eecf1f7db40daf12d26f7ed0 (2018.09.04) from https://github.com/libarchive/libarchive/releases/tag/v3.3.3 (https://github.com/libarchive/libarchive/commit/5fe69dd018745a88eecf1f7db40daf12d26f7ed0 )
 * new: readme file
 * new: changelog file
