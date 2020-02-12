@@ -1,5 +1,6 @@
 * text=auto !eol
 /.cirrus.yml -text
+/.svnignore -text
 /CMakeLists.txt -text
 /CONTRIBUTING.md -text
 /COPYING -text
@@ -50,7 +51,6 @@ build/cmake/FindPCREPOSIX.cmake -text
 build/cmake/LibarchiveCodeCoverage.cmake -text
 build/cmake/config.h.in -text
 build/makerelease.sh -text
-build/pkgconfig/.svnignore -text
 build/pkgconfig/libarchive.pc.in -text
 build/utils/gen_archive_string_composition_h.sh -text
 build/version -text
