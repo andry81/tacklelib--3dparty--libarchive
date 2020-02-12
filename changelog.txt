@@ -1,4 +1,7 @@
 2020.02.11:
+* fixed: workaround for the library issue: `CMakeLists.txt tries to override globally visible CMAKE_BUILD_TYPE through the cache` : https://github.com/libarchive/libarchive/issues/1163
+
+2020.02.11:
 * refactor: svn/git ignores
 
 2020.02.10:

@@ -10,6 +10,18 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build/cmake")
 if(NOT CMAKE_RUNTIME_OUTPUT_DIRECTORY)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${libarchive_BINARY_DIR}/bin)
 endif()
+
+function(check_CMAKE_BUILD_TYPE_vs_multiconfig)
+  get_property(GENERATOR_IS_MULTI_CONFIG GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
+  if(NOT DEFINED GENERATOR_IS_MULTI_CONFIG)
+    message(FATAL_ERROR "GENERATOR_IS_MULTI_CONFIG must be defined")
+  endif()
+  if((NOT GENERATOR_IS_MULTI_CONFIG AND NOT CMAKE_BUILD_TYPE) OR
+     (GENERATOR_IS_MULTI_CONFIG AND CMAKE_BUILD_TYPE))
+      message(FATAL_ERROR "CMAKE_BUILD_TYPE variable must not be set in case of a multiconfig generator presence and must be set if not: GENERATOR_IS_MULTI_CONFIG=`${GENERATOR_IS_MULTI_CONFIG}` CMAKE_BUILD_TYPE=`${CMAKE_BUILD_TYPE}`")
+  endif()
+endfunction()
+
 #
 # Set the Build type for make based generators.
 # You can choose following types:
@@ -17,15 +29,18 @@ endif()
 #   Release        : Release build
 #   RelWithDebInfo : Release build with Debug Info
 #   MinSizeRel     : Release Min Size build
-IF(NOT CMAKE_BUILD_TYPE)
-  SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build Type" FORCE)
-ENDIF(NOT CMAKE_BUILD_TYPE)
-# Set a value type to properly display CMAKE_BUILD_TYPE on GUI if the
-# value type is "UNINITIALIZED".
-GET_PROPERTY(cached_type CACHE CMAKE_BUILD_TYPE PROPERTY TYPE)
-IF("${cached_type}" STREQUAL "UNINITIALIZED")
-  SET(CMAKE_BUILD_TYPE "${CMAKE_BUILD_TYPE}" CACHE STRING "Build Type" FORCE)
-ENDIF("${cached_type}" STREQUAL "UNINITIALIZED")
+#IF(NOT CMAKE_BUILD_TYPE)
+#  SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build Type" FORCE)
+#ENDIF(NOT CMAKE_BUILD_TYPE)
+## Set a value type to properly display CMAKE_BUILD_TYPE on GUI if the
+## value type is "UNINITIALIZED".
+#GET_PROPERTY(cached_type CACHE CMAKE_BUILD_TYPE PROPERTY TYPE)
+#IF("${cached_type}" STREQUAL "UNINITIALIZED")
+#  SET(CMAKE_BUILD_TYPE "${CMAKE_BUILD_TYPE}" CACHE STRING "Build Type" FORCE)
+#ENDIF("${cached_type}" STREQUAL "UNINITIALIZED")
+
+check_CMAKE_BUILD_TYPE_vs_multiconfig()
+
 # Check the Build Type.
 IF(NOT "${CMAKE_BUILD_TYPE}"
        MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)\$")
