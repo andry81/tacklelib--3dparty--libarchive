@@ -17,15 +17,16 @@ endif()
 #   Release        : Release build
 #   RelWithDebInfo : Release build with Debug Info
 #   MinSizeRel     : Release Min Size build
-IF(NOT CMAKE_BUILD_TYPE)
-  SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build Type" FORCE)
-ENDIF(NOT CMAKE_BUILD_TYPE)
-# Set a value type to properly display CMAKE_BUILD_TYPE on GUI if the
-# value type is "UNINITIALIZED".
-GET_PROPERTY(cached_type CACHE CMAKE_BUILD_TYPE PROPERTY TYPE)
-IF("${cached_type}" STREQUAL "UNINITIALIZED")
-  SET(CMAKE_BUILD_TYPE "${CMAKE_BUILD_TYPE}" CACHE STRING "Build Type" FORCE)
-ENDIF("${cached_type}" STREQUAL "UNINITIALIZED")
+#IF(NOT CMAKE_BUILD_TYPE)
+#  SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build Type" FORCE)
+#ENDIF(NOT CMAKE_BUILD_TYPE)
+## Set a value type to properly display CMAKE_BUILD_TYPE on GUI if the
+## value type is "UNINITIALIZED".
+#GET_PROPERTY(cached_type CACHE CMAKE_BUILD_TYPE PROPERTY TYPE)
+#IF("${cached_type}" STREQUAL "UNINITIALIZED")
+#  SET(CMAKE_BUILD_TYPE "${CMAKE_BUILD_TYPE}" CACHE STRING "Build Type" FORCE)
+#ENDIF("${cached_type}" STREQUAL "UNINITIALIZED")
+
 # Check the Build Type.
 IF(NOT "${CMAKE_BUILD_TYPE}"
        MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)\$")
