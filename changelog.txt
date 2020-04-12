@@ -1,4 +1,7 @@
 2020.04.12:
+* changed: changes store retarget to branches instead of the trunk to be able to apply changes to multiple versions
+
+2020.04.12:
 * new: branch with the library changes at release 3.4.2 commit #3288ebb0353beb51dfb09d444dedbe9235ead53d (2020.02.12) from https://github.com/libarchive/libarchive/releases/tag/v3.4.2 (https://github.com/libarchive/libarchive/commit/3288ebb0353beb51dfb09d444dedbe9235ead53d )
 
 2020.02.17:
