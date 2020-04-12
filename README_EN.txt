@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2020.02.10
+* 2020.04.12
 * tacklelib--3dparty--libarchive
 
 1. DESCRIPTION
@@ -60,13 +60,13 @@ The libarchive distribution as a whole is Copyright by Tim Kientzle.
 3. REPOSITORIES
 -------------------------------------------------------------------------------
 Primary:
-  * https://sf.net/p/tacklelib/3dparty--libarchive/HEAD/tree/trunk
-    https://svn.code.sf.net/p/tacklelib/3dparty--libarchive/trunk
+  * https://sf.net/p/tacklelib/3dparty--libarchive/HEAD/tree/branches
+    https://svn.code.sf.net/p/tacklelib/3dparty--libarchive/branches
 First mirror:
-  * https://github.com/andry81/tacklelib--3dparty--libarchive/tree/trunk
+  * https://github.com/andry81/tacklelib--3dparty--libarchive/tree/branches
     https://github.com/andry81/tacklelib--3dparty--libarchive.git
 Second mirror:
-  * https://bitbucket.org/andry81/tacklelib-3dparty-libarchive/src/trunk
+  * https://bitbucket.org/andry81/tacklelib-3dparty-libarchive/src/branches
     https://bitbucket.org/andry81/tacklelib-3dparty-libarchive.git
 
 -------------------------------------------------------------------------------
